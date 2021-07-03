@@ -1,0 +1,56 @@
+{% extends "core/base_layout.html" %}
+
+{% block title %}Home Biblioteca{% endblock title %}
+
+{% block content %}
+    <div class="container mt-1 mb-1">
+        <div class="d-flex justify-content-center">
+            <h1>Bienvenidos a la Biblioteca</h1>
+        </div>
+        <div class="d-flex justify-content-center">
+            <p>Un espacio para disfrutar de una buena lectura en el género de tu preferencia</p>
+        </div>
+        <div class="d-flex justify-content-center">
+            <div id="carouselExampleControls" class="carousel slide w-25" data-bs-ride="carousel">
+                {% load static %}
+                <div class="carousel-inner">
+                    <div class="carousel-item active">
+                        <img src="{% static 'core/img/portadaharrypotter.jpeg'%}" class="d-block w-100" alt="...">
+                    </div>
+                    <div class="carousel-item">
+                        <img src="{% static 'core/img/portada100soledad.jpeg'%}" class="d-block w-100" alt="...">
+                    </div>
+                    <div class="carousel-item">
+                        <img src="{% static 'core/img/portadajuegotronos.jpeg'%}" class="d-block w-100" alt="...">
+                    </div>
+                </div>
+                <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls"
+                    data-bs-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Previous</span>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls"
+                    data-bs-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Next</span>
+                </button>
+            </div>
+        </div>
+        <div class="container border mt-1 mb-1">
+            <div class="row">
+                <div class="col">
+                    <h4 class="border text-center">Fantasía</h4>
+                    <p>Tenemos la saga de Harry Potter y otras del mismo género!!!</p>
+                </div>
+                <div class="col">
+                    <h4 class="border text-center">Clásicos</h4>
+                    <p>Disfruta de los apasionantes clásicos de la literatura latinoamericana!!!</p>
+                </div>
+                <div class="col">
+                    <h4 class="border text-center">Épicas</h4>
+                    <p>La apasionante saga de juego de tronos, pídela aquí!!!</p>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock content %}

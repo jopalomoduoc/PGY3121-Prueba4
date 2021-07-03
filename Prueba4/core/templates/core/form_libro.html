@@ -1,0 +1,28 @@
+{% extends "core/base_layout.html" %}
+
+{% block title %}Registrar Libro{% endblock title %}
+
+{% block content %}
+{% load static %}
+<div class="container mt-1 mb-1 align_self">
+    <div class="d-flex justify-content-start">
+        <a href="{% url 'libro_lista' %}" class="btn btn-primary" role="button" aria-pressed="true">Volver a Listado</a>
+    </div>
+    <div class="d-flex justify-content-start">
+        <h1>Registrar Libro</h1>
+    </div>
+    <div class="d-flex justify-content-start">
+        <form action="" method="post" id="formularioIngreso">
+            {% csrf_token %}
+            <div class="form-group">
+                {{ form.as_table }}
+            </div>
+            <div class="button">
+                <input type="submit" value="Enviar" class="btn btn-success" id="enviar">
+            </div>
+
+        </form>
+    </div>
+
+</div>
+{% endblock content %}
