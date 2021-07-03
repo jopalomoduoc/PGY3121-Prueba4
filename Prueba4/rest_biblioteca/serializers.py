@@ -1,7 +1,7 @@
 from rest_framework import serializers
 from core.models import Libro
 
-class LibroSerializers(serializers.ModelSerializers):
+class LibroSerializers(serializers.ModelSerializer):
 
     class Meta:
         model= Libro
