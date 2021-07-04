@@ -19,11 +19,11 @@ def lista_bibliotecas(request):
     """
     if request.method == 'GET':
         libro = Libro.objects.all()
-        serializer = LibroSerializer(libro, many=True)
+        serializer = LibroSerializers(libro, many=True)
         return Response(serializer.data)
     elif request.method == 'POST':
         data = JSONParser().parse(request)
-        serializer = LibroSerializer(data=data)
+        serializer = LibroSerializers(data=data)
         if serializer.is_valid():
             serializer.save()
             return Response(serializer.data, status=status.HTTP_201_Created)
@@ -41,11 +41,11 @@ def detalle_biblioteca(request, id):
     except Libro.DoesNotExist:
         return Response(status=status.HTTP_404_NOT_FOUND)
     if request.method == 'GET':
-        serializer = LibroSerializer(libro)
+        serializer = LibroSerializers(libro)
         return Response(serializer.data)
     elif request.method == 'PUT':
         data = JSONParser().parse(request)
-        serializer = LibroSerializer(libro, data=data)
+        serializer = LibroSerializers(libro, data=data)
         if serializer.is_valid():
             serializer.save()
             return Response(serializer.data)
